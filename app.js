@@ -30,6 +30,10 @@ app.get("/blog/:blogName", (req, res) => {
     }
 });
 
+app.get('*', (req, res) => {
+    res.render("partials/damn")
+})
+
 const PORT = 7000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
