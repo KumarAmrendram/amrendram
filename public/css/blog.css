@@ -1,0 +1,7 @@
+.blog-area img  {
+
+    border-radius: 10px;
+    height: 250px;
+    width: 450px;
+    object-fit: cover;
+}

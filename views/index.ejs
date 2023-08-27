@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Blog App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="./">Home</a>
+        <a href="./blogs">Blog</a>
+        <a href="./about">About me</a>
+        <a href="./contact">Contact me</a>
+      </nav>
+
+      <div class="mobile-nav hide-mobi-nav">
+        <nav class="mobile-navbar d-flex flex-column">
+          <a href="./">Home</a>
+          <a href="./blogs">Blog</a>
+          <a href="./about">About me</a>
+          <a href="./contact">Contact me</a>
+        </nav>
+
+      <div class="toggle" onclick="showNavbar()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    </header>
+
+    <div class="body-content d-flex me-3">
+      <div class="main">
+        <h1 class="text-center m-5">
+          Coding: Because '404 Not Found' is Not an Option!
+        </h1>
+        <% for (let i = 0; i < blogs.length; i++) { %>
+        <div class="blog-card">
+          <h4 class="ms-2"><%= blogs[i].name%></h4>
+          <div class="d-flex my-4">
+            <img
+              src="<%= blogs[i].image %>"
+              alt="wolf image"
+              width="100px"
+              height="100px"
+              class="m-1"
+            />
+            <div class="">
+              <p class="mx-2"><%= blogs[i].content %></p>
+              <a href="./blog/<%= blogs[i].name%>"
+                ><button class="btn btn-outline-dark">Read More</button></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <% } %>
+      </div>
+      <div class="sideflex">
+        <div class="profile-div" onclick="showAbout()">
+          <div class="profile-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="sidebar"  id="sidebar">
+          <h5 class="text-center">Hello There!</h5>
+          <%- include('./partials/sidebar.ejs') %>
+        </div>
+      </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
