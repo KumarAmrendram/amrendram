@@ -59,10 +59,6 @@ header {
   width: 100%;
   transition: 0.3s;
 }
-
-.main {
-  flex: 1;
-}
 /* sidebar */
 .sideflex {
   width: 300px;
@@ -210,15 +206,9 @@ footer {
     padding: 5px;
     border-radius: 10px;
   }
-  /* .body-content {
-    display: block;
-    flex-direction: column;
-    
-  }
 
-  .main {
-    display: flex;
-    flex-direction: column;
-    width: 120%;
-  } */
+
+    .blog-card {
+      width: 100%;
+    }
 }
