@@ -16,15 +16,21 @@
     <title>Blog App</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
+        body {
+            height: 100vh;
+        }
         img 
         {
-            width: 100vh;
+            /* width: 100vh; */
+            height: 50vh;
         }
     </style>
   </head>
 
   <body>
-    <div class="container text-center">
+    <%- include('./header.ejs') %>
+
+    <div class="container text-center mt-3">
       <img src="img/page-not-found.svg" alt="" srcset="" />
       <h2>Sorry!</h2>
       <h4>This page is under construction right now</h4>
