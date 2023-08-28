@@ -6,7 +6,7 @@ const cors = require("cors");
 const blogData = require("./public/db/blogData.json");
 
 app.set("view engine", "ejs");
-app.set("views", path.join("/views"));
+app.set("views", path.join("views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.get("/", (req, res) => {
