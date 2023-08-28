@@ -28,7 +28,7 @@ app.get("/:blogName", (req, res) => {
   
     if (foundBlog) {
       // Render the "blog" view and pass the foundBlog data to it
-      res.render("./", { blog: foundBlog });
+      res.render("./", { blogs: foundBlog });
     } else {
       res.status(404).send("Error 404: Not Found");
     }
