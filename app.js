@@ -16,20 +16,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/blog/:blogName", (req, res) => {
-  const requestedBlogName = req.params.blogName.toLowerCase(); // Convert to lowercase
-  let foundBlog = null;
+  let flag = 0; // Initialize flag to 0
 
   for (let i = 0; i < blogData.length; i++) {
-    const blogName = blogData[i].name.toLowerCase(); // Convert to lowercase
-    if (blogName === requestedBlogName) {
-      foundBlog = blogData[i];
-      break; // Exit the loop as soon as a match is found
+    const requestedBlogName = req.params.blogName;
+    console.log("Requested Blog Name:", requestedBlogName);
+    if (blogData[i].name === req.params.blogName) {
+      flag = 1; // Set flag to 1 if a match is found
+      res.status(200).render("blog", { blog: blogData[i] });
+      return;
     }
   }
 
-  if (foundBlog) {
-    res.status(200).render("blog.ejs", { blog: foundBlog });
-  } else {
+  // Check flag after the loop
+  if (flag === 0) {
     res.send("Error 404: Not Found ");
   }
 });
