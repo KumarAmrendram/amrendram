@@ -19,19 +19,18 @@ app.get("/blog/:blogName", (req, res) => {
   const requestedBlogName = req.params.blogName;
   console.log("Requested Blog Name:", requestedBlogName);
 
-//   for (let i = 0; i < blogData.length; i++) {
-//     if (blogData[i].name === req.params.blogName) {
-//       flag = 1; // Set flag to 1 if a match is found
-//       res.status(200).render('blog', { blog: blogData[i] });
-//       return;
-//     }
-//   }
-res.render("blog", {blog:blogData[0]}); 
+  for (let i = 0; i < blogData.length; i++) {
+    if (blogData[i].name === req.params.blogName) {
+      flag = 1; // Set flag to 1 if a match is found
+      res.status(200).render("blog", { blog: blogData[i] });
+      return;
+    }
+  }
 
-//   // Check flag after the loop
-//   if (flag === 0) {
-//     res.send("Error 404: Not Found ");
-//   }
+  // Check flag after the loop
+  if (flag === 0) {
+    res.send("Error 404: Not Found ");
+  }
 });
 
 app.get("*", (req, res) => {
