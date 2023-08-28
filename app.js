@@ -6,7 +6,7 @@ const cors = require("cors");
 const blogData = require("./public/db/blogData.json");
 
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.get("/", (req, res) => {
@@ -18,7 +18,7 @@ app.get("/blog/:blogName", (req, res) => {
   for (let i = 0; i < blogData.length; i++) {
     if (blogData[i].name === req.params.blogName) {
       flag = 1;
-      res.status(200).render("blog", { blog: blogData[i] });
+      res.status(200).render("partials/blog", { blog: blogData[i] });
       //   res.status(200).send({ blogData });
       return;
     } else {
