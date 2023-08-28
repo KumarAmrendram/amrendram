@@ -16,12 +16,12 @@ app.get("/", (req, res) => {
 
 app.get("/:blogName", (req, res) => {
   let flag = 0; // Initialize flag to 0
-  const requestedBlogName = req.params.blogName;
+  const requestedBlogName = req.params.blogName.trim();
   console.log("Requested Blog Name:", requestedBlogName);
 
   for (let i = 0; i < blogData.length; i++) {
-    if (blogData[i].name === req.params.blogName) {
-      flag = 1; // Set flag to 1 if a match is found
+    if (blogData[i].name.toLowerCase() === requestedBlogName.toLowerCase()) {
+      flag = 1;
       res.status(200).render("blog", { blog: blogData[i] });
       return;
     }
