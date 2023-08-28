@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.render("index", { blogs: blogData });
 });
 
-app.get("/blog/:blogName", (req, res) => {
+app.get("/:blogName", (req, res) => {
   let flag = 0; // Initialize flag to 0
   const requestedBlogName = req.params.blogName;
   console.log("Requested Blog Name:", requestedBlogName);
