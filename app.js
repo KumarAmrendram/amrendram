@@ -8,7 +8,6 @@ const blogData = require("./public/db/blogData.json");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
-// app.set("views", absoluteViewsPath);
 app.use(cors());
 
 app.get("/", (req, res) => {
