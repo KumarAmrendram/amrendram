@@ -7,7 +7,6 @@ function showAbout() {
   }
 }
 
-
 let mobileNav = document.querySelector(".mobile-nav");
 function showNavbar() {
   if (mobileNav.classList.contains("hide-mobi-nav")) {
