@@ -18,7 +18,7 @@ app.get("/blog/:blogName", (req, res) => {
     for (let i = 0; i < blogData.length; i++) {
         if (blogData[i].name === req.params.blogName) {
             flag = 1;
-            res.status(200).render("blog", { blog: blogData[i] });
+            res.status(200).render("blog.ejs", { blog: blogData[i] });
             //   res.status(200).send({ blogData });
             return;
         } else {
