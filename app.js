@@ -15,23 +15,25 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:blogName", (req, res) => {
-  let flag = 0; // Initialize flag to 0
-  const requestedBlogName = req.params.blogName.trim();
-  console.log("Requested Blog Name:", requestedBlogName);
-
-  for (let i = 0; i < blogData.length; i++) {
-    if (blogData[i].name.toLowerCase() === requestedBlogName.toLowerCase()) {
-      flag = 1;
-      res.status(200).render("blog", { blog: blogData[i] });
-      return;
+    const requestedBlogName = req.params.blogName;
+    let foundBlog = null;
+  
+    // Find the blog in blogData based on the requested name
+    for (const blog of blogData) {
+      if (blog.name === requestedBlogName) {
+        foundBlog = blog;
+        break;
+      }
     }
-  }
-
-  // Check flag after the loop
-  if (flag === 0) {
-    res.send("Error 404: Not Found ");
-  }
-});
+  
+    if (foundBlog) {
+      // Render the "blog" view and pass the foundBlog data to it
+      res.render("blog", { blog: foundBlog });
+    } else {
+      res.status(404).send("Error 404: Not Found");
+    }
+  });
+  
 
 app.get("*", (req, res) => {
   res.render("partials/damn");
@@ -40,4 +42,4 @@ app.get("*", (req, res) => {
 const PORT = 7000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-});
+}); 
