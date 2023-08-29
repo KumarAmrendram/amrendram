@@ -6,7 +6,7 @@
     "tags": ["html5", "web development"],
     "date": "2022-05-15",
     "content": "In this blog post, we'll dive into the basics of HTML5 and learn how to create simple web pages using the new HTML5 features.",
-    "image": "https://source.unsplash.com/random/500x500/?programming, HTML5"
+    "image": "https://source.unsplash.com/random/500x500/?code, HTML5"
   },
   {
     "name": "CSS3 Styling Techniques",
@@ -15,7 +15,7 @@
     "tags": ["css3", "styling", "design"],
     "date": "2022-06-01",
     "content": "Explore advanced CSS3 styling techniques to enhance the appearance of your web pages. We'll cover selectors, properties, and more.",
-    "image": "https://source.unsplash.com/random/500x500/?style,design"
+    "image": "https://source.unsplash.com/random/500x500/?css,stylesheet"
   },
   {
     "name": "JavaScript Fundamentals",
@@ -24,7 +24,7 @@
     "tags": ["javascript", "programming"],
     "date": "2022-07-10",
     "content": "Learn the essential concepts of JavaScript programming. We'll discuss variables, functions, control flow, and how to interact with the DOM.",
-    "image": "https://source.unsplash.com/random/500x500/?programming,code"
+    "image": "https://source.unsplash.com/random/500x500/?javascript,web"
   },
   {
     "name": "Introduction to Responsive Web Design",
