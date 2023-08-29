@@ -1,0 +1,17 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main .main-text {
+    width: 40%;
+    text-align: left;
+    margin-top: 10%;
+}
+
+.main .main-elements img {
+    width: 100%;
+    height: auto;
+    padding: 0 30%;
+    overflow: hidden;
+}
